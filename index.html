@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>z3em - Programmer Service</title>
+
+  <link href="Z3em" rel="stylesheet" />
+
+  <style>
+
+    * {
+
+      margin: 0;
+
+      padding: 0;
+
+      box-sizing: border-box;
+
+    }
+
+    body {
+
+      font-family: 'Cairo', sans-serif;
+
+      color: #00e5ff;
+
+      text-align: center;
+
+      background: #001f3f;
+
+      overflow-x: hidden;
+
+      display: flex;
+
+      flex-direction: column;
+
+      min-height: 100vh;
+
+    }
+
+    #matrix {
+
+      position: fixed;
+
+      width: 100%;
+
+      height: 100%;
+
+      z-index: -1;
+
+      background: #001f3f;
+
+    }
+
+    canvas {
+
+      display: block;
+
+    }
+
+    header, footer {
+
+      padding: 20px;
+
+    }
+
+    nav {
+
+      margin-bottom: 30px;
+
+      flex-wrap: wrap;
+
+    }
+
+    nav a.button {
+
+      margin: 6px;
+
+      padding: 10px 25px;
+
+      font-size: 0.9em;
+
+    }
+
+    .page {
+
+      display: none;
+
+      padding: 40px 20px;
+
+      animation: fadeInUp 0.7s ease forwards;
+
+      flex: 1;
+
+    }
+
+    .page.active {
+
+      display: block;
+
+    }
+
+    @keyframes fadeInUp {
+
+      0% { opacity: 0; transform: translateY(30px); }
+
+      100% { opacity: 1; transform: translateY(0); }
+
+    }
+
+    img.profile {
+
+      width: 160px;
+
+      height: 160px;
+
+      border-radius: 50%;
+
+      border: 4px solid #00e5ff;
+
+      box-shadow: 0 0 30px rgba(0, 229, 255, 0.5);
+
+      margin-bottom: 20px;
+
+    }
+
+    h1 {
+
+      font-size: 2.5em;
+
+      margin-bottom: 15px;
+
+    }
+
+    p {
+
+      font-size: 1.2em;
+
+      max-width: 650px;
+
+      margin: 0 auto 25px;
+
+    }
+
+    ul.list {
+
+      list-style: none;
+
+      padding: 0;
+
+      margin: auto;
+
+      max-width: 700px;
+
+      text-align: right;
+
+    }
+
+    ul.list li {
+
+      background: rgba(0, 229, 255, 0.1);
+
+      margin: 10px 0;
+
+      padding: 15px 20px;
+
+      border-radius: 10px;
+
+      font-size: 1.1em;
+
+      box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+
+      transition: background 0.3s ease;
+
+    }
+
+    ul.list li:hover {
+
+      background: rgba(0, 229, 255, 0.2);
+
+    }
+
+    a.button {
+
+      display: inline-block;
+
+      padding: 15px 35px;
+
+      background: #00e5ff;
+
+      color: #001f3f;
+
+      border-radius: 50px;
+
+      font-size: 1em;
+
+      font-weight: bold;
+
+      text-decoration: none;
+
+      transition: all 0.3s ease;
+
+      box-shadow: 0 5px 20px rgba(0, 229, 255, 0.3);
+
+    }
+
+    a.button:hover {
+
+      background: #7fffd4;
+
+      transform: translateY(-3px);
+
+      box-shadow: 0 10px 25px rgba(0, 229, 255, 0.4);
+
+    }
+
+    footer {
+
+      font-size: 0.9em;
+
+      color: #ccc;
+
+      padding: 20px 0;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div id="matrix"><canvas id="canvas"></canvas></div>
+
+  <header>
+
+    <nav>
+
+      <a class="button" onclick="showPage('home')">الرئيسية</a>
+
+      <a class="button" onclick="showPage('about')">المزيد عني</a>
+
+      <a class="button" onclick="showPage('projects')">مشاريعي</a>
+
+      <a class="button" onclick="showPage('achievements')">إنجازاتي</a>
+
+      <a class="button" onclick="showPage('services')">الخدمات</a>
+
+    </nav>
+
+  </header>
+
+  <section id="home" class="page active">
+
+
+    <h1>Z3em</h1>
+
+    <p>مبرمج محترف في <strong></strong>،  أطور تجارب فريدة , عالم البرمجة وتصميم المواقع</p>
+
+    <a class="button" href="discord.gg/nl5" target="_blank">discord.gg/nl5</a>
+
+  </section>
+
+  <section id="about" class="page">
+
+    <h1>من هو زعيم؟</h1>
+
+    <p>أنا زعيم، مطور متمرس في صناعة الأنظمة الذكية، أعشق التحديات البرمجية وأسعى لبناء أدوات تخدم الجميع بشكل احترافي.</p>
+
+  </section>
+
+  <section id="projects" class="page">
+
+    <h1>مشاريعي</h1>
+
+    <ul class="list">
+
+      <li>موقع ذكاء صناعي يدعم الصور والنصوص</li>
+
+      <li>نظام نقاط + باقات ذكية</li>
+
+      <li>بوتات متعددة المهام بإدارة مركزية</li>
+
+    </ul>
+
+
+  <section id="services" class="page">
+
+    <h1>الخدمات</h1>
+
+    <ul class="list">
+
+      <li>تصميم مواقع HTML/JS احترافية</li>
+
+      <li>برمجة بوتات Discord بمواصفات مخصصة</li>
+
+      <li>تطوير أدوات ذكاء صناعي بتكامل API</li>
+
+      <li>حماية وتشفير مشاريع الويب</li>
+
+    </ul>
+
+  </section>
+
+  <footer>
+
+    &copy; جميع الحقوق محفوظة لـ Z3em
+
+  </footer>
+
+  <script>
+
+    function showPage(id) {
+
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+
+      document.getElementById(id).classList.add('active');
+
+    }
+
+    const canvas = document.getElementById('canvas');
+
+    const ctx = canvas.getContext('2d');
+
+    canvas.height = window.innerHeight;
+
+    canvas.width = window.innerWidth;
+
+    const letters = '01';
+
+    const fontSize = 14;
+
+    const columns = canvas.width / fontSize;
+
+    const drops = Array.from({ length: columns }).fill(1);
+
+    function draw() {
+
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#00e5ff';
+
+      ctx.font = fontSize + 'px monospace';
+
+      for (let i = 0; i < drops.length; i++) {
+
+        const text = letters[Math.floor(Math.random() * letters.length)];
+
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+
+          drops[i] = 0;
+
+        }
+
+        drops[i]++;
+
+      }
+
+    }
+
+    setInterval(draw, 33);
+
+  </script>
+
+</body>
+
+</html>
